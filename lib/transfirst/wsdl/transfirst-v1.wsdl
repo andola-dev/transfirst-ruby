@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.1.5-hudson-$BUILD_NUMBER-. --><wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdlns="http://postilion/realtime/merchantframework/wsdl/v1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:faults="http://postilion/realtime/portal/soa/xsd/Faults/2009/01" xmlns:xsdns="http://postilion/realtime/merchantframework/xsd/v1/" targetNamespace="http://postilion/realtime/merchantframework/wsdl/v1/" name="UserWebServices-v1">
+
+<!-- Types -->
+
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" attributeFormDefault="qualified">
+			<xsd:import namespace="http://postilion/realtime/portal/soa/xsd/Faults/2009/01" schemaLocation="https://ws.cert.transactionexpress.com:443/portal/merchantframework/MerchantWebServices-v1?xsd=2" />
+		</xsd:schema>
+		<xsd:schema elementFormDefault="qualified" attributeFormDefault="qualified">
+			<xsd:import namespace="http://postilion/realtime/merchantframework/xsd/v1/" schemaLocation="https://ws.cert.transactionexpress.com:443/portal/merchantframework/MerchantWebServices-v1?xsd=3" />
+		</xsd:schema>
+	</wsdl:types>
+
+	<!-- Message -->
+
+	<wsdl:message name="SendTranRequest">
+		<wsdl:part name="parameters" element="xsdns:SendTranRequest" />
+	</wsdl:message>
+	<wsdl:message name="SendTranResponse">
+		<wsdl:part name="parameters" element="xsdns:SendTranResponse" />
+	</wsdl:message>
+	<wsdl:message name="SettleTranRequest">
+		<wsdl:part name="parameters" element="xsdns:SettleTranRequest" />
+	</wsdl:message>
+	<wsdl:message name="SettleTranResponse">
+		<wsdl:part name="parameters" element="xsdns:SettleTranResponse" />
+	</wsdl:message>
+	<wsdl:message name="ServiceFault">
+		<wsdl:part name="ServiceFault" element="faults:ServiceFault" />
+	</wsdl:message>
+	<wsdl:message name="SystemFault">
+		<wsdl:part name="SystemFault" element="faults:SystemFault" />
+	</wsdl:message>
+	<wsdl:message name="UpdtRecurrProfRequest">
+		<wsdl:part name="parameters" element="xsdns:UpdtRecurrProfRequest" />
+	</wsdl:message>
+	<wsdl:message name="UpdtRecurrProfResponse">
+		<wsdl:part name="parameters" element="xsdns:UpdtRecurrProfResponse" />
+	</wsdl:message>
+	<wsdl:message name="FndRecurrProfRequest">
+		<wsdl:part name="parameters" element="xsdns:FndRecurrProfRequest" />
+	</wsdl:message>
+	<wsdl:message name="FndRecurrProfResponse">
+		<wsdl:part name="parameters" element="xsdns:FndRecurrProfResponse" />
+	</wsdl:message>
+
+	<!-- Port type -->
+
+	<wsdl:portType name="MerchantWebServicesPortType">
+		<wsdl:operation name="SendTran">
+			<wsdl:input message="wsdlns:SendTranRequest" />
+			<wsdl:output message="wsdlns:SendTranResponse" />
+			<wsdl:fault name="ServiceFault" message="wsdlns:ServiceFault" />
+			<wsdl:fault name="SystemFault" message="wsdlns:SystemFault" />
+		</wsdl:operation>
+		<wsdl:operation name="SettleTran">
+			<wsdl:input message="wsdlns:SettleTranRequest" />
+			<wsdl:output message="wsdlns:SettleTranResponse" />
+			<wsdl:fault name="ServiceFault" message="wsdlns:ServiceFault" />
+			<wsdl:fault name="SystemFault" message="wsdlns:SystemFault" />
+		</wsdl:operation>
+		<wsdl:operation name="UpdtRecurrProf">
+			<wsdl:input message="wsdlns:UpdtRecurrProfRequest" />
+			<wsdl:output message="wsdlns:UpdtRecurrProfResponse" />
+			<wsdl:fault name="ServiceFault" message="wsdlns:ServiceFault" />
+			<wsdl:fault name="SystemFault" message="wsdlns:SystemFault" />
+		</wsdl:operation>
+		<wsdl:operation name="FndRecurrProf">
+			<wsdl:input message="wsdlns:FndRecurrProfRequest" />
+			<wsdl:output message="wsdlns:FndRecurrProfResponse" />
+			<wsdl:fault name="ServiceFault" message="wsdlns:ServiceFault" />
+			<wsdl:fault name="SystemFault" message="wsdlns:SystemFault" />
+		</wsdl:operation>
+	</wsdl:portType>
+
+	<!-- Binding -->
+
+	<wsdl:binding name="MerchantWebServicesSOAP11Binding" type="wsdlns:MerchantWebServicesPortType">
+		
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="SendTran">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				
+			</wsdl:output>
+			<wsdl:fault name="ServiceFault">
+				<soap:fault name="ServiceFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SystemFault">
+				<soap:fault name="SystemFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="SettleTran">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				
+			</wsdl:output>
+			<wsdl:fault name="ServiceFault">
+				<soap:fault name="ServiceFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SystemFault">
+				<soap:fault name="SystemFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="UpdtRecurrProf">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				
+			</wsdl:output>
+			<wsdl:fault name="ServiceFault">
+				<soap:fault name="ServiceFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SystemFault">
+				<soap:fault name="SystemFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="FndRecurrProf">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal" />
+				
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+				
+			</wsdl:output>
+			<wsdl:fault name="ServiceFault">
+				<soap:fault name="ServiceFault" use="literal" />
+			</wsdl:fault>
+			<wsdl:fault name="SystemFault">
+				<soap:fault name="SystemFault" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+
+	<!-- Service -->
+
+	<wsdl:service name="MerchantWebServices">
+		<wsdl:port binding="wsdlns:MerchantWebServicesSOAP11Binding" name="SOAPOverHTTP">
+			<soap:address location="https://ws.cert.transactionexpress.com:443/portal/merchantframework/MerchantWebServices-v1" />
+		</wsdl:port>
+	</wsdl:service>
+
+</wsdl:definitions>
